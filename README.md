@@ -1,6 +1,6 @@
-UncleRoofGoGo
+##UncleRoofGoGo
 =============
-Setup Process
+###Setup Process
 
 ```
 gi android >> .gitignore 
@@ -14,3 +14,7 @@ add build.gradle
 ```
 compile project(':TheCheeseLibrary') 
 ```
+
+===============
+###Links
+- https://github.com/codepath/android_guides/wiki/Consuming-APIs-with-Retrofit
