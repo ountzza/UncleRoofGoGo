@@ -5,6 +5,7 @@
 ```
 gi android >> .gitignore 
 git submodule add git://nuuneoi.com/TheCheeseLibrary.git
+git submodule update --init --recursive
 ```
 fix setting.gradle
 ```
