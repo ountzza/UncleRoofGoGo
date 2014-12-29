@@ -22,6 +22,8 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:appcompat-v7:21.0.3'
+    compile 'com.google.android.gms:play-services:6.5.+'
+    compile 'com.google.api-client:google-api-client:1.18.0-rc'
     compile project(':TheCheeseLibrary')
     compile 'com.squareup.retrofit:retrofit:1.8.0'
     compile 'com.squareup.okhttp:okhttp:2.0.0'

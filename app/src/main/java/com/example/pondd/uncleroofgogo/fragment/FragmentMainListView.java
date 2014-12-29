@@ -2,9 +2,11 @@ package com.example.pondd.uncleroofgogo.fragment;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 
 import com.example.pondd.uncleroofgogo.R;
 
@@ -12,6 +14,9 @@ import com.example.pondd.uncleroofgogo.R;
  * Created by nuuneoi on 11/16/2014.
  */
 public class FragmentMainListView extends Fragment {
+
+    SwipeRefreshLayout swipeRefreshLayout;
+    private ListView listView;
 
     public FragmentMainListView() {
         super();
@@ -35,6 +40,7 @@ public class FragmentMainListView extends Fragment {
     private void initInstances(View rootView) {
         // init instance with rootView.findViewById here
         setRetainInstance(true);
+        listView = (ListView) rootView.findViewById(R.id.ListView);
     }
 
     @Override

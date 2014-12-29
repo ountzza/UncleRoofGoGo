@@ -9,11 +9,17 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.example.pondd.uncleroofgogo.R;
+import com.example.pondd.uncleroofgogo.fragment.FragmentMainListView;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.drive.Drive;
+
+import java.sql.Driver;
 
 
 public class MainActivity extends ActionBarActivity {
     DrawerLayout drawerLayout;
     ActionBarDrawerToggle actionBarDrawerToggle;
+    //GoogleAccountCredential credential;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +27,11 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main);
 
         initInstance();
+        if (savedInstanceState == null) {
+            getSupportFragmentManager().beginTransaction()
+                    .add(R.id.contentContainer, FragmentMainListView.newInstance(), "FragmentMainListView")
+                    .commit();
+        }
     }
 
     public void initInstance() {
@@ -32,6 +43,13 @@ public class MainActivity extends ActionBarActivity {
         drawerLayout.setDrawerListener(actionBarDrawerToggle);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
+
+        GoogleApiClient mGoogleApiClient = new GoogleApiClient.Builder(this)
+                .addApi(Drive.API)
+                .addScope(Drive.SCOPE_FILE)
+                .build();
+
+        mGoogleApiClient.connect();
     }
 
     @Override
